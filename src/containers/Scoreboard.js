@@ -10,18 +10,17 @@ import PlayerDetail from '../components/PlayerDetail';
 
 class Scoreboard extends Component {
   static propTypes = {
-    players: PropTypes.array.isRequired,
-    selectedPlayerIndex: PropTypes.number.isRequired
+    players: PropTypes.array.isRequired
   };
 
   render() {
     const { dispatch, players, selectedPlayerIndex } = this.props;
+    const selectPlayer = bindActionCreators(PlayerActionCreators.selectPlayer, dispatch);
     const addPlayer = bindActionCreators(PlayerActionCreators.addPlayer, dispatch);
     const removePlayer = bindActionCreators(PlayerActionCreators.removePlayer, dispatch);
     const updatePlayerScore = bindActionCreators(PlayerActionCreators.updatePlayerScore, dispatch);
-    const test = 'Hello world';
 
-    const playerComponents = players.map((player, index) => (
+    const playerComponents = this.props.players.map((player, index) => (
       <Player
         index={index}
         name={player.name}

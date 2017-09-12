@@ -1,5 +1,12 @@
 import * as PlayerActionTypes from '../actiontypes/player';
 
+export const selectPlayer = index => {
+  return {
+  	type: PlayerActionTypes.SELECT_PLAYER,
+  	index
+ 	}
+};
+
 export const addPlayer = name => {
   return {
   	type: PlayerActionTypes.ADD_PLAYER,

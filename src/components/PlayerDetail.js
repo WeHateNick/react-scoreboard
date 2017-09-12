@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlayerDetail = props => {
-	const selectedPlayer = props.index ? props.players[props.index] : false;
+	const selectedPlayer = props.index > -1 ? props.players[props.index] : false;
   if( selectedPlayer ){
     return (
       <div>
@@ -29,8 +29,7 @@ const PlayerDetail = props => {
   }
 };
 PlayerDetail.propTypes = {
-  players: PropTypes.array.isRequired,
-  index: PropTypes.number.isRequired
+  players: PropTypes.array.isRequired
 };
 
 
