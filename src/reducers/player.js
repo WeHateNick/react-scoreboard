@@ -1,4 +1,5 @@
 import * as PlayerActionTypes from '../actiontypes/player';
+import moment from 'moment';
 
 const initialState = {
 	players: [{
@@ -33,7 +34,9 @@ export default function Player(state=initialState, action) {
     case PlayerActionTypes.ADD_PLAYER:
       const addPlayerList = [...state.players, {
         name: action.name,
-        score: 0
+        score: 0,
+        created: moment().format('L'),
+        updated: 'New'
       }]
       return {
         ...state,
@@ -55,7 +58,8 @@ export default function Player(state=initialState, action) {
         if(index === action.index) {
           return {
             ...player,
-            score: player.score + action.score
+            score: player.score + action.score,
+            updated: moment().format('L')
           };
         }
         return player;

@@ -18,7 +18,7 @@ const PlayerDetail = props => {
           </li>
           <li>
             <span>Updated: </span> 
-            { selectedPlayer.created }
+            { selectedPlayer.updated }
           </li>        
         </ul>
       </div>
@@ -29,7 +29,7 @@ const PlayerDetail = props => {
   }
 };
 PlayerDetail.propTypes = {
-  players: PropTypes.array.isRequired
+  players: PropTypes.array.isRequired,
   index: PropTypes.number.isRequired
 };
 
