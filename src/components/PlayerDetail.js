@@ -30,6 +30,7 @@ const PlayerDetail = props => {
 };
 PlayerDetail.propTypes = {
   players: PropTypes.array.isRequired
+  index: PropTypes.number.isRequired
 };
 
 

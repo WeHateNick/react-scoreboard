@@ -9,7 +9,7 @@ const Player = props => (
         onClick={() => props.removePlayer(props.index)}>
         ✖
       </a>
-      <a onClick={() => props.selectPlayer(props.index)}>{props.name}</a>
+      <a onClick={() => props.selectPlayer(props.index)}><span>{props.name}</span></a>
     </div>
     <div className="player-score">
       <Counter
