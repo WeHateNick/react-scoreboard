@@ -6,18 +6,20 @@ import * as PlayerActionCreators from '../actions/player';
 import Header from '../components/Header';
 import Player from '../components/Player';
 import AddPlayerForm from '../components/AddPlayerForm';
-// import PlayerDetail from '../components/PlayerDetail';
+import PlayerDetail from '../components/PlayerDetail';
 
 class Scoreboard extends Component {
   static propTypes = {
-    players: PropTypes.array.isRequired
+    players: PropTypes.array.isRequired,
+    selectedPlayerIndex: PropTypes.number.isRequired
   };
 
   render() {
-    const { dispatch, players } = this.props;
+    const { dispatch, players, selectedPlayerIndex } = this.props;
     const addPlayer = bindActionCreators(PlayerActionCreators.addPlayer, dispatch);
     const removePlayer = bindActionCreators(PlayerActionCreators.removePlayer, dispatch);
     const updatePlayerScore = bindActionCreators(PlayerActionCreators.updatePlayerScore, dispatch);
+    const test = 'Hello world';
 
     const playerComponents = players.map((player, index) => (
       <Player
@@ -37,6 +39,7 @@ class Scoreboard extends Component {
         </div>
         <AddPlayerForm addPlayer={addPlayer} />
         <div className="player-detail">
+          <PlayerDetail players={players} index={selectedPlayerIndex} />
         </div>
       </div>
     );
@@ -45,7 +48,8 @@ class Scoreboard extends Component {
 
 const mapStateToProps = state => (
   {
-    players: state
+    players: state.players,
+    selectedPlayerIndex: state.selectedPlayerIndex
   }
 );
 
