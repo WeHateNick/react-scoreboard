@@ -28,6 +28,7 @@ class Scoreboard extends Component {
         key={player.name}
         updatePlayerScore={updatePlayerScore}
         removePlayer={removePlayer}
+        selectPlayer={selectPlayer}
       />
     ));
     return (

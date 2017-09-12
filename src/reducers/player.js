@@ -25,13 +25,11 @@ const initialState = {
 
 export default function Player(state=initialState, action) {
   switch(action.type) {
-    // case PlayerActionTypes.SELECT_PLAYER:
-    //   return [
-    //     ...state,
-    //     {
-    //       index: action.index
-    //     }
-    //   ];
+    case PlayerActionTypes.SELECT_PLAYER:
+      return {
+        ...state,
+        selectedPlayerIndex: action.index
+      };
     case PlayerActionTypes.ADD_PLAYER:
       const addPlayerList = [...state.players, {
         name: action.name,
