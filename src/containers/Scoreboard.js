@@ -5,7 +5,7 @@ import * as PlayerActionCreators from '../actions/player';
 import Header from '../components/Header';
 import Player from '../components/Player';
 import AddPlayerForm from '../components/AddPlayerForm';
-import PlayerDetail from '../components/PlayerDetail';
+// import PlayerDetail from '../components/PlayerDetail';
 
 class Scoreboard extends Component {
   static propTypes = {
@@ -37,7 +37,6 @@ class Scoreboard extends Component {
         <AddPlayerForm addPlayer={addPlayer} />
         
         <div className="player-detail">
-          <PlayerDetail />
         </div>
       </div>
     );

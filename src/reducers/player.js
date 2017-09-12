@@ -23,7 +23,7 @@ const initialState = {
 	selectedPlayerIndex: -1
 }
 
-export default function Player(state=initialState, action) {
+export default function Player(state=initialState.players, action) {
   switch(action.type) {
     case PlayerActionTypes.ADD_PLAYER:
       return [
