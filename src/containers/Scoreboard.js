@@ -36,7 +36,6 @@ class Scoreboard extends Component {
           { playerComponents }
         </div>
         <AddPlayerForm addPlayer={addPlayer} />
-        
         <div className="player-detail">
         </div>
       </div>
